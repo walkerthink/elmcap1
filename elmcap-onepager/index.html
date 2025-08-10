@@ -35,20 +35,8 @@
     }
     .brand img { height: 72px; width: auto; display: block; }
     .brand-name { font-weight: 650; letter-spacing: .02em; font-size: 34px; }
-    .intro {
-      padding: 24px 32px 0;
-      display: grid;
-      place-items: center;
-      text-align: left;
-    }
-    .intro-inner { width: 100%; max-width: 1100px; }
-    .statement {
-      font-size: clamp(16px, 1.7vw, 20px);
-      font-weight: 400;
-      letter-spacing: .2px;
-    }
     .content {
-      padding: 8px 32px 32px;
+      padding: 24px 32px 32px;
       display: grid;
       place-items: center;
       text-align: left;
@@ -83,7 +71,7 @@
     }
     @media (min-width: 900px) {
       header { padding: 32px 48px; }
-      .intro, .content { padding-left: 48px; padding-right: 48px; }
+      .content { padding-left: 48px; padding-right: 48px; }
       .contact, footer { padding-left: 48px; padding-right: 48px; }
     }
   </style>
@@ -97,19 +85,14 @@
       <div class="brand-name">Elm Capital</div>
     </header>
 
-    <section class="intro">
-      <div class="intro-inner">
-        <div class="statement">
-          Elm Capital is a crypto liquid fund founded by a team of high-frequency traders with a proven record of delivering exceptional results in traditional and digital markets.
-        </div>
-        <p class="lead" style="color:var(--muted); font-size: clamp(18px, 2vw, 22px); max-width: 1000px; margin-top: 12px;">
-          Our mission is to bring institutional-grade discipline, risk management, and execution capabilities to the rapidly evolving world of digital assets.
-        </p>
-      </div>
-    </section>
-
     <section class="content">
       <div class="content-inner">
+        <p>
+          Elm Capital is a crypto liquid fund founded by a team of high-frequency traders with a proven record of delivering exceptional results in traditional and digital markets.
+          Our mission is to bring institutional-grade discipline, risk management, and execution capabilities to the rapidly evolving world of digital assets.
+          We operate two distinct yet complementary strategies:
+        </p>
+
         <h2>Delta-Neutral Quant Fund</h2>
         <p>
           Designed to deliver consistent, high-Sharpe returns with minimal correlation to broader market movements.
@@ -126,14 +109,12 @@
           to position ahead of market narratives and capture asymmetric returns while maintaining disciplined liquidity management.
         </p>
 
-        <h2>Philosophy</h2>
         <p>
           Our investment philosophy is rooted in precision, adaptability, and the belief that combining systematic discipline with targeted thematic investing
           creates a resilient and scalable portfolio. By pairing the speed and accuracy of quantitative trading with the vision and flexibility of venture-style investing,
           Elm Capital seeks to generate superior risk-adjusted returns across market cycles.
         </p>
 
-        <h2>Alignment</h2>
         <p>
           We are committed to transparency, robust operational infrastructure, and long-term alignment with our investors,
           ensuring every decision is guided by a focus on capital preservation and sustainable growth.
