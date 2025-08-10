@@ -1,4 +1,7 @@
-# Elm Capital One-Pager (Full-Width)
+# Elm Capital — Tiger-style Landing (Dark Purple)
 
-Full-bleed layout (no card edges), dark purple background, large typography.
-Replace `assets/logo.png` with any updated logo if needed and push to Vercel.
+- Top-left logo + "Elm Capital"
+- Full-width statement in center
+- Contact strip above footer
+- Copyright footer at bottom
+- Colors are set in `:root` for easy tweaks
