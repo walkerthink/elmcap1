@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Elm Capital</title>
+  <meta name="description" content="Elm Capital is a crypto liquid fund founded by HFT traders expanding into MFT. We run two strategies: a delta-neutral quant fund delivering high Sharpe ratios, and a discretionary altcoin fund targeting high-upside opportunities.">
+  <meta property="og:title" content="Elm Capital" />
+  <meta property="og:description" content="Crypto liquid fund: delta-neutral quant + discretionary altcoin strategies." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="/assets/og-image.png" />
+  <meta property="og:url" content="https://elmcap.xyz" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="icon" href="/assets/favicon.ico" />
+  <style>
+    :root {
+      --bg: #0b0b0b;
+      --fg: #f5f5f5;
+      --muted:#b5b5b5;
+      --card:#111213;
+      --accent:#e6e6e6;
+    }
+    html, body { height:100%; margin:0; background:var(--bg); color:var(--fg);
+      font: 16px/1.6 ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji"; }
+    .wrap { min-height:100%; display:flex; flex-direction:column; }
+    header, footer { text-align:center; padding:24px 16px; letter-spacing:.02em; }
+    header { border-bottom:1px solid rgba(255,255,255,.06); }
+    .brand { display:inline-flex; align-items:center; gap:12px; font-weight:700; font-size:18px; text-decoration:none; color:var(--fg); }
+    .brand img { height:28px; width:auto; display:block; }
+    main { flex:1; display:flex; align-items:center; justify-content:center; padding:64px 16px; }
+    .card { background:var(--card); border:1px solid rgba(255,255,255,.06); border-radius:20px; padding:40px 28px; max-width:880px; width:100%; box-shadow: 0 8px 28px rgba(0,0,0,.35); }
+    h1 { margin:0 0 12px; font-size:32px; font-weight:700; letter-spacing:.01em; }
+    p.lead { margin:0 0 20px; color:var(--muted); font-size:18px; }
+    .cta { margin-top:24px; display:inline-block; padding:12px 18px; border-radius:999px; border:1px solid rgba(255,255,255,.18); text-decoration:none; color:var(--fg); }
+    .cta:hover { background:rgba(255,255,255,.06); }
+    footer { border-top:1px solid rgba(255,255,255,.06); color:var(--muted); font-size:14px; }
+    @media (min-width: 880px) {
+      h1 { font-size:36px; }
+      p.lead { font-size:20px; }
+      .card { padding:56px 64px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <a class="brand" href="/">
+        <img src="/assets/logo.svg" alt="Elm Capital logo" />
+        <span>Elm Capital</span>
+      </a>
+    </header>
+    <main>
+      <div class="card">
+        <h1>Elm Capital</h1>
+        <p class="lead">
+          Elm Capital is a crypto liquid fund founded by HFT traders expanding into MFT.
+          We run two strategies: a delta-neutral quant fund delivering high Sharpe ratios,
+          and a discretionary altcoin fund targeting high-upside opportunities.
+        </p>
+        <a class="cta" href="mailto:contact@elmcap.xyz">contact@elmcap.xyz</a>
+      </div>
+    </main>
+    <footer>
+      © <span id="year"></span> Elm Capital. All rights reserved.
+    </footer>
+  </div>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
