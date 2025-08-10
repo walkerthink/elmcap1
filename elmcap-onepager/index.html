@@ -26,18 +26,16 @@
     .page {
       min-height: 100dvh;
       display: grid;
-      grid-template-rows: auto 1fr auto auto; /* header, main, contact, copyright */
+      grid-template-rows: auto 1fr auto auto;
     }
-    /* Header */
     header {
       display: flex;
       align-items: center;
-      gap: 14px;
-      padding: 24px 28px;
+      gap: 16px;
+      padding: 28px 32px;
     }
-    .brand img { height: 36px; width: auto; display: block; }
-    .brand-name { font-weight: 600; letter-spacing: .02em; font-size: 18px; }
-    /* Hero */
+    .brand img { height: 54px; width: auto; display: block; }
+    .brand-name { font-weight: 600; letter-spacing: .02em; font-size: 26px; }
     main {
       display: grid;
       place-items: center;
@@ -55,13 +53,12 @@
     }
     .lead {
       margin-top: 18px;
-      font-size: clamp(18px, 2.2vw, 22px);
+      font-size: clamp(16px, 1.8vw, 18px);
       color: var(--muted);
       max-width: 900px;
     }
-    /* Contact strip above footer */
     .contact {
-      padding: 16px 28px 8px;
+      padding: 16px 32px 8px;
       text-align: left;
     }
     .contact a {
@@ -70,19 +67,18 @@
       border-bottom: 1px solid rgba(255,255,255,0.25);
     }
     .contact a:hover { border-color: var(--fg); }
-    /* Footer */
     footer {
-      padding: 18px 28px 28px;
+      padding: 18px 32px 28px;
       font-size: 14px;
       color: var(--muted);
       border-top: 1px solid rgba(255,255,255,0.08);
     }
     @media (min-width: 900px) {
-      header { padding: 28px 48px; }
+      header { padding: 32px 48px; }
       main { padding: 40px 48px 20px; }
       .contact, footer { padding-left: 48px; padding-right: 48px; }
-      .brand img { height: 42px; }
-      .brand-name { font-size: 20px; }
+      .brand img { height: 64px; }
+      .brand-name { font-size: 30px; }
     }
   </style>
 </head>
@@ -106,7 +102,7 @@
       </div>
     </main>
     <div class="contact">
-      <a href="mailto:contact@elmcap.xyz">contact@elmcap.xyz</a>
+      Please contact us at <a href="mailto:contact@elmcap.xyz">contact@elmcap.xyz</a>
     </div>
     <footer>
       © <span id="year"></span> Elm Capital. All rights reserved.
