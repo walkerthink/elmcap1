@@ -4,12 +4,12 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Elm Capital</title>
-  <meta name="description" content="Elm Capital — Delta-neutral quant and liquid venture strategies in digital assets.">
+  <meta name="description" content="Elm Capital — Alpha Fund and Liquid Venture strategies in digital assets.">
   <style>
     :root {
-      --bg: #170423;
-      --fg: #ECEFF4;
-      --muted: #C9D1D9;
+      --bg: #170423;   /* dark purple */
+      --fg: #ECEFF4;   /* primary text */
+      --muted: #C9D1D9;/* secondary text */
     }
     * { box-sizing: border-box; }
     html, body {
@@ -25,7 +25,7 @@
     .page {
       min-height: 100dvh;
       display: grid;
-      grid-template-rows: auto 1fr auto auto;
+      grid-template-rows: auto 1fr auto auto; /* header, content, contact, footer */
     }
     header {
       display: flex;
@@ -35,6 +35,7 @@
     }
     .brand img { height: 72px; width: auto; display: block; }
     .brand-name { font-weight: 650; letter-spacing: .02em; font-size: 34px; }
+
     .content {
       padding: 24px 32px 32px;
       display: grid;
@@ -52,7 +53,9 @@
       font-weight: 600;
       font-size: clamp(20px, 2.2vw, 26px);
       letter-spacing: .2px;
+      color: var(--fg);
     }
+
     .contact {
       padding: 18px 32px 8px;
       text-align: left;
@@ -63,6 +66,7 @@
       border-bottom: 1px solid rgba(255,255,255,0.25);
     }
     .contact a:hover { border-color: var(--fg); }
+
     footer {
       padding: 16px 32px 28px;
       font-size: 14px;
@@ -88,16 +92,18 @@
     <section class="content">
       <div class="content-inner">
         <p>
-          Elm Capital is a crypto liquid fund founded by a team of high-frequency traders with a proven record of delivering exceptional results in traditional and digital markets.
+          Elm Capital is a crypto liquid fund founded by a team of quantitative traders with a proven record of delivering exceptional results in traditional and digital markets.
           Our mission is to bring institutional-grade discipline, risk management, and execution capabilities to the rapidly evolving world of digital assets.
+        </p>
+        <p>
           We operate two distinct yet complementary strategies:
         </p>
 
-        <h2>Delta-Neutral Quant Fund</h2>
+        <h2>Alpha Fund</h2>
         <p>
           Designed to deliver consistent, high-Sharpe returns with minimal correlation to broader market movements.
           Through advanced statistical models, proprietary execution algorithms, and deep understanding of market microstructure,
-          we capture inefficiencies across multiple venues while maintaining tight risk controls.
+          we capture inefficiencies across multiple venues and blockchains while maintaining tight risk controls.
         </p>
 
         <h2>Liquid Venture Fund</h2>
@@ -105,8 +111,8 @@
           A research-driven strategy focused on high-conviction investments in liquid tokens with venture-like upside.
           As active traders and quants, we are also power users of many blockchain protocols and crypto-native products,
           giving us firsthand insight into what works, what scales, and what has the potential to dominate its category.
-          We leverage this practitioner’s perspective—alongside thematic research, deep ecosystem networks, and early access—
-          to position ahead of market narratives and capture asymmetric returns while maintaining disciplined liquidity management.
+          We combine this practitioner’s perspective with thematic research, deep ecosystem networks, and early access
+          to position ahead of market narratives and capture asymmetric returns, all while maintaining disciplined liquidity management.
         </p>
 
         <p>
