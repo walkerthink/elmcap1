@@ -1,267 +1,469 @@
 <!doctype html>
 <html lang="en">
-      <head>
-              <meta charset="utf-8" />
-              <meta name="viewport" content="width=device-width, initial-scale=1" />
-              <title>Elm Capital</title>
-          <meta name="description" content="Elm Capital — Institutional-grade multi-asset investment strategies." />
-          <link rel="preconnect" href="https://fonts.googleapis.com" />
-          <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-          <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=DM+Serif+Display&display=swap" rel="stylesheet" />
-          <style>
-                    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Elm Capital</title>
+    <meta name="description" content="Elm Capital — Institutional-grade crypto liquid fund." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+    <style>
+      *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-                    :root {
-                                --bg:        #0c0c10;
-                                --surface:   #13131a;
-                                --border:    rgba(255,255,255,0.07);
-                                --gold:      #c9a84c;
-                                --gold-dim:  rgba(201,168,76,0.15);
-                                --fg:        #f0ede8;
-                                --muted:     #8a8a96;
-                                --body-text: #c5c2bc;
-                    }
+      :root {
+        --bg:     #faf9f7;
+        --fg:     #1a1a18;
+        --muted:  #6b6b63;
+        --border: #d8d6d0;
+      }
 
-                    html, body {
-                                min-height: 100%;
-                                background: var(--bg);
-                                color: var(--fg);
-                                font-family: 'Inter', ui-sans-serif, system-ui, sans-serif;
-                                font-size: 16px;
-                                line-height: 1.7;
-                                -webkit-font-smoothing: antialiased;
-                    }
+      html, body {
+        min-height: 100%;
+        background: var(--bg);
+        color: var(--fg);
+        font-family: 'IBM Plex Mono', 'Courier New', monospace;
+        font-size: 14px;
+        line-height: 1.65;
+        -webkit-font-smoothing: antialiased;
+      }
 
-                    /* ── Layout ── */
-                    .page {
-                                max-width: 780px;
-                                margin: 0 auto;
-                                padding: 0 32px;
-                    }
+      .page {
+        max-width: 960px;
+        margin: 0 auto;
+        padding: 0 40px;
+      }
 
-                    /* ── Header ── */
-                    header {
-                                display: flex;
-                                align-items: center;
-                                gap: 14px;
-                                padding: 48px 0 64px;
-                                border-bottom: 1px solid var(--border);
-                    }
+      /* Nav */
+      nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 28px 0 24px;
+        border-bottom: 1px solid var(--border);
+      }
 
-                    header img {
-                                height: 44px;
-                                width: auto;
-                                display: block;
-                                opacity: 0.95;
-                    }
+      .nav-brand {
+        font-family: 'IM Fell English', Georgia, serif;
+        font-size: 22px;
+        font-weight: 400;
+        color: var(--fg);
+      }
 
-                    .brand-name {
-                                font-family: 'DM Serif Display', Georgia, serif;
-                                font-size: 26px;
-                                font-weight: 400;
-                                letter-spacing: 0.01em;
-                                color: var(--fg);
-                    }
+      .nav-brand .xyz {
+        font-style: italic;
+        font-size: 14px;
+        font-family: 'IBM Plex Mono', monospace;
+        color: var(--muted);
+        margin-left: 4px;
+      }
 
-                    /* ── Hero intro ── */
-                    .intro {
-                                padding: 56px 0 48px;
-                                border-bottom: 1px solid var(--border);
-                    }
+      .nav-links {
+        display: flex;
+        gap: 36px;
+        list-style: none;
+      }
 
-                    .intro p {
-                                font-size: 17px;
-                                color: var(--body-text);
-                                line-height: 1.75;
-                    }
+      .nav-links a {
+        font-size: 11px;
+        font-weight: 500;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--fg);
+        text-decoration: none;
+      }
 
-                    .intro p + p {
-                                margin-top: 18px;
-                    }
+      .nav-links a:hover { opacity: 0.5; }
 
-                    /* ── Strategies ── */
-                    .strategies {
-                                padding: 52px 0 0;
-                    }
+      /* Hero */
+      .hero {
+        padding: 72px 0 64px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 48px;
+        align-items: start;
+        border-bottom: 1px solid var(--border);
+      }
 
-                    .strategies-label {
-                                font-size: 11px;
-                                font-weight: 500;
-                                letter-spacing: 0.12em;
-                                text-transform: uppercase;
-                                color: var(--gold);
-                                margin-bottom: 32px;
-                    }
+      .hero-eyebrow {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 11px;
+        font-weight: 500;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--muted);
+        margin-bottom: 24px;
+      }
 
-                    .strategy-grid {
-                                display: grid;
-                                grid-template-columns: 1fr 1fr;
-                                gap: 20px;
-                    }
+      .hero-eyebrow::before {
+        content: '';
+        display: inline-block;
+        width: 28px;
+        height: 1px;
+        background: var(--muted);
+      }
 
-                    .strategy-card {
-                                background: var(--surface);
-                                border: 1px solid var(--border);
-                                border-radius: 12px;
-                                padding: 28px 26px 30px;
-                                position: relative;
-                                overflow: hidden;
-                    }
+      .hero-title {
+        font-family: 'IM Fell English', Georgia, serif;
+        font-size: 52px;
+        font-weight: 400;
+        line-height: 1.1;
+        color: var(--fg);
+      }
 
-                    .strategy-card::before {
-                                content: '';
-                                position: absolute;
-                                top: 0; left: 0; right: 0;
-                                height: 2px;
-                                background: linear-gradient(90deg, var(--gold), transparent);
-                                opacity: 0.6;
-                    }
+      .hero-title em { font-style: italic; }
 
-                    .strategy-card h2 {
-                                font-family: 'DM Serif Display', Georgia, serif;
-                                font-size: 19px;
-                                font-weight: 400;
-                                color: var(--fg);
-                                margin-bottom: 12px;
-                                line-height: 1.3;
-                    }
+      .hero-right { padding-top: 8px; }
 
-                    .strategy-card p {
-                                font-size: 14px;
-                                color: var(--body-text);
-                                line-height: 1.7;
-                    }
+      .hero-right p {
+        font-size: 13px;
+        color: var(--muted);
+        line-height: 1.75;
+      }
 
-                    /* ── Philosophy ── */
-                    .philosophy {
-                                padding: 52px 0;
-                                border-top: 1px solid var(--border);
-                                margin-top: 40px;
-                    }
+      .hero-cta {
+        display: inline-block;
+        margin-top: 32px;
+        padding: 11px 22px;
+        border: 1px solid var(--fg);
+        font-size: 11px;
+        font-weight: 500;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--fg);
+        text-decoration: none;
+        transition: background 0.15s, color 0.15s;
+      }
 
-                    .philosophy-label {
-                                font-size: 11px;
-                                font-weight: 500;
-                                letter-spacing: 0.12em;
-                                text-transform: uppercase;
-                                color: var(--gold);
-                                margin-bottom: 24px;
-                    }
+      .hero-cta:hover { background: var(--fg); color: var(--bg); }
+      .hero-cta::after { content: ' ↗'; }
 
-                    .philosophy p {
-                                font-size: 15px;
-                                color: var(--body-text);
-                                line-height: 1.8;
-                    }
+      /* Stats */
+      .stats {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        border-bottom: 1px solid var(--border);
+      }
 
-                    .philosophy p + p {
-                                margin-top: 16px;
-                    }
+      .stat {
+        padding: 36px 0;
+        border-right: 1px solid var(--border);
+      }
 
-                    /* ── Contact ── */
-                    .contact {
-                                padding: 36px 0 28px;
-                                border-top: 1px solid var(--border);
-                    }
+      .stat:last-child { border-right: none; }
+      .stat:not(:first-child) { padding-left: 36px; }
 
-                    .contact p {
-                                font-size: 14px;
-                                color: var(--muted);
-                    }
+      .stat-value {
+        font-family: 'IM Fell English', Georgia, serif;
+        font-size: 42px;
+        font-weight: 400;
+        color: var(--fg);
+        line-height: 1;
+        margin-bottom: 8px;
+      }
 
-                    .contact a {
-                                color: var(--gold);
-                                text-decoration: none;
-                                font-weight: 500;
-                                transition: opacity 0.15s;
-                    }
+      .stat-label {
+        font-size: 10px;
+        font-weight: 500;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--muted);
+      }
 
-                    .contact a:hover { opacity: 0.75; }
+      /* Strategies */
+      .strategies-section { padding: 60px 0 0; }
 
-                    /* ── Footer ── */
-                    footer {
-                                padding: 20px 0 48px;
-                                font-size: 12px;
-                                color: var(--muted);
-                                opacity: 0.6;
-                    }
+      .section-eyebrow {
+        font-size: 10px;
+        font-weight: 500;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--muted);
+        margin-bottom: 32px;
+      }
 
-                    /* ── Responsive ── */
-                    @media (max-width: 600px) {
-                                .strategy-grid { grid-template-columns: 1fr; }
-                                header { padding: 36px 0 48px; }
-                                .intro { padding: 40px 0 36px; }
-                                .strategies { padding: 40px 0 0; }
-                    }
-                  </style>
-      </head>
-      <body>
-              <div class="page">
+      .strategies-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        border-top: 1px solid var(--border);
+      }
 
-                        <header>
-                                    <img src="assets/logo.png" alt="Elm Capital logo" />
-                                    <span class="brand-name"></span>span>
-                        </header>
+      .strategy-card {
+        padding: 36px 36px 36px 0;
+        border-bottom: 1px solid var(--border);
+      }
 
-                        <section class="intro" id="intro"></section>section>
+      .strategy-card + .strategy-card {
+        padding-left: 36px;
+        padding-right: 0;
+        border-left: 1px solid var(--border);
+      }
 
-                        <section class="strategies">
-                                    <div class="strategies-label">Our Strategies</div>div>
-                                    <div class="strategy-grid" id="strategy-grid"></div>div>
-                        </section>section>
+      .strategy-tag {
+        display: inline-block;
+        font-size: 10px;
+        font-weight: 500;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        border: 1px solid var(--border);
+        padding: 3px 8px;
+        color: var(--muted);
+        margin-bottom: 18px;
+      }
 
-                        <section class="philosophy" id="philosophy"></section>section>
+      .strategy-card h2 {
+        font-family: 'IM Fell English', Georgia, serif;
+        font-size: 28px;
+        font-weight: 400;
+        color: var(--fg);
+        line-height: 1.2;
+        margin-bottom: 16px;
+      }
 
-                        <div class="contact" id="contact"></div>div>
-                        <footer id="footer"></footer>footer>
+      .strategy-card p {
+        font-size: 13px;
+        color: var(--muted);
+        line-height: 1.75;
+      }
 
-              </div>div>
+      .strategy-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-top: 24px;
+      }
 
-              <!-- All text content lives in content.js — edit that file to change any wording -->
-              <script src="content.js"></script>
-              <script>
-                        // Override the default renderer with the new layout
-                        (function () {
-                                    const C = SITE_CONTENT;
+      .tag-pill {
+        font-size: 10px;
+        font-weight: 500;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        border: 1px solid var(--border);
+        padding: 4px 10px;
+        color: var(--muted);
+      }
 
-                                    document.querySelector('.brand-name').textContent = C.brandName;
-                                    document.title = C.brandName;
+      /* Philosophy + Principles */
+      .bottom-section {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        border-top: 1px solid var(--border);
+      }
 
-                                    // Intro
-                                    document.getElementById('intro').innerHTML =
-                                                  `<p>${C.intro1}</p><p>${C.intro2}</p>`;
+      .philosophy-col {
+        padding: 48px 36px 48px 0;
+        border-right: 1px solid var(--border);
+      }
 
-                                    // Strategy cards
-                                    document.getElementById('strategy-grid').innerHTML = `
-                                              <div class="strategy-card">
-                                                          <h2>${C.alphaTitle}</h2>
-                                                                      <p>${C.alphaBody}</p>
-                                                                                </div>
-                                                                                          <div class="strategy-card">
-                                                                                                      <h2>${C.liquidTitle}</h2>
-                                                                                                                  <p>${C.liquidBody}</p>
-                                                                                                                            </div>`;
+      .principles-col {
+        padding: 48px 0 48px 36px;
+      }
 
-                                    // Philosophy
-                                    document.getElementById('philosophy').innerHTML =
-                                                  `<div class="philosophy-label">Investment Philosophy</div>
-                                                             <p>${C.philosophy}</p>
-                                                                        <p>${C.commitment}</p>`;
+      .col-eyebrow {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 10px;
+        font-weight: 500;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--muted);
+        margin-bottom: 24px;
+      }
 
-                                    // Contact
-                                    document.getElementById('contact').innerHTML =
-                                                  `<p>${C.contactText} <a href="mailto:${C.contactEmail}">${C.contactEmail}</a></p>`;
+      .col-eyebrow::before {
+        content: '';
+        display: inline-block;
+        width: 20px;
+        height: 1px;
+        background: var(--muted);
+      }
 
-                                    // Footer
-                                    const yr = new Date().getFullYear();
-                                    document.getElementById('footer').textContent =
-                                                  `© ${yr} ${C.footerCompany}. All rights reserved.`;
-                        })();
-              </script>
-      </body>
-</html>html>
-              </script>
-                        </header>
-      </body>
-          </style></title>
-      </head>
+      .philosophy-col h2 {
+        font-family: 'IM Fell English', Georgia, serif;
+        font-size: 30px;
+        font-weight: 400;
+        color: var(--fg);
+        line-height: 1.25;
+        margin-bottom: 20px;
+      }
+
+      .philosophy-col p {
+        font-size: 13px;
+        color: var(--muted);
+        line-height: 1.75;
+      }
+
+      .principle {
+        display: grid;
+        grid-template-columns: 32px 1fr;
+        gap: 14px;
+        padding: 18px 0;
+        border-bottom: 1px solid var(--border);
+        align-items: start;
+      }
+
+      .principle:first-of-type { border-top: 1px solid var(--border); }
+
+      .principle-num {
+        font-size: 11px;
+        color: var(--muted);
+        padding-top: 1px;
+      }
+
+      .principle p {
+        font-size: 13px;
+        color: var(--fg);
+        line-height: 1.6;
+      }
+
+      .principle strong { font-weight: 500; }
+
+      /* Footer */
+      footer {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 20px 0 36px;
+        border-top: 1px solid var(--border);
+        font-size: 12px;
+        color: var(--muted);
+      }
+
+      footer a { color: var(--muted); text-decoration: none; }
+      footer a:hover { color: var(--fg); }
+
+      /* Responsive */
+      @media (max-width: 700px) {
+        .hero { grid-template-columns: 1fr; gap: 32px; }
+        .hero-title { font-size: 38px; }
+        .stats { grid-template-columns: 1fr; }
+        .stat { border-right: none; border-bottom: 1px solid var(--border); }
+        .stat:not(:first-child) { padding-left: 0; }
+        .strategies-grid { grid-template-columns: 1fr; }
+        .strategy-card + .strategy-card { padding-left: 0; border-left: none; border-top: 1px solid var(--border); }
+        .bottom-section { grid-template-columns: 1fr; }
+        .philosophy-col { border-right: none; padding-right: 0; border-bottom: 1px solid var(--border); }
+        .principles-col { padding-left: 0; }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page">
+
+      <nav>
+        <div class="nav-brand">Elm Capital <span class="xyz">xyz</span></div>
+        <ul class="nav-links">
+          <li><a href="#strategies">Strategies</a></li>
+          <li><a href="#philosophy">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <section class="hero">
+        <div class="hero-left">
+          <div class="hero-eyebrow">Crypto Liquid Fund</div>
+          <h1 class="hero-title">Institutional<br>discipline in<br><em>digital<br>markets.</em></h1>
+        </div>
+        <div class="hero-right">
+          <p id="hero-desc"></p>
+          <a class="hero-cta" href="#contact">Request Information</a>
+        </div>
+      </section>
+
+      <div class="stats">
+        <div class="stat">
+          <div class="stat-value">2</div>
+          <div class="stat-label">Distinct Strategies</div>
+        </div>
+        <div class="stat">
+          <div class="stat-value">Multi</div>
+          <div class="stat-label">Venue &amp; Chain Execution</div>
+        </div>
+        <div class="stat">
+          <div class="stat-value">Quant</div>
+          <div class="stat-label">Driven Infrastructure</div>
+        </div>
+      </div>
+
+      <section class="strategies-section" id="strategies">
+        <div class="section-eyebrow">Our Strategies</div>
+        <div class="strategies-grid">
+          <div class="strategy-card">
+            <div class="strategy-tag">Strategy I</div>
+            <h2 id="alpha-title">Market Neutral<br>Alpha</h2>
+            <p id="alpha-body"></p>
+            <div class="strategy-tags">
+              <span class="tag-pill">Statistical Arb</span>
+              <span class="tag-pill">High Sharpe</span>
+              <span class="tag-pill">Risk Controls</span>
+              <span class="tag-pill">Multi-Venue</span>
+            </div>
+          </div>
+          <div class="strategy-card">
+            <div class="strategy-tag">Strategy II</div>
+            <h2 id="liquid-title">Thematic<br>Token Investing</h2>
+            <p id="liquid-body"></p>
+            <div class="strategy-tags">
+              <span class="tag-pill">Liquid Tokens</span>
+              <span class="tag-pill">High Conviction</span>
+              <span class="tag-pill">Fundamental Research</span>
+              <span class="tag-pill">Long-Term</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="bottom-section" id="philosophy">
+        <div class="philosophy-col">
+          <div class="col-eyebrow">Philosophy</div>
+          <h2>Precision, adaptability,<br>long-term alignment.</h2>
+          <p id="philosophy-body"></p>
+        </div>
+        <div class="principles-col">
+          <div class="col-eyebrow">Our Principles</div>
+          <div class="principle">
+            <span class="principle-num">01</span>
+            <p><strong>Institutional-grade discipline</strong> applied to the full digital asset spectrum.</p>
+          </div>
+          <div class="principle">
+            <span class="principle-num">02</span>
+            <p><strong>Systematic and thematic</strong> strategies that complement each other across cycles.</p>
+          </div>
+          <div class="principle">
+            <span class="principle-num">03</span>
+            <p><strong>Transparency and alignment</strong> with investors at every stage.</p>
+          </div>
+          <div class="principle">
+            <span class="principle-num">04</span>
+            <p><strong>Robust operations</strong> and infrastructure built for scale.</p>
+          </div>
+        </div>
+      </section>
+
+      <footer id="contact">
+        <span id="footer-left"></span>
+        <span>For qualified investors only</span>
+      </footer>
+
+    </div>
+
+    <!-- All text content lives in content.js -->
+    <script src="content.js"></script>
+    <script>
+      (function () {
+        var C = SITE_CONTENT;
+        document.title = C.brandName;
+        document.getElementById('hero-desc').textContent = C.intro1;
+        document.getElementById('alpha-body').textContent = C.alphaBody;
+        document.getElementById('liquid-body').textContent = C.liquidBody;
+        document.getElementById('philosophy-body').textContent = C.philosophy;
+        var yr = new Date().getFullYear();
+        document.getElementById('footer-left').innerHTML =
+          '© ' + yr + ' ' + C.footerCompany + ' · <a href="mailto:' + C.contactEmail + '">' + C.contactEmail + '</a>';
+      })();
+    </script>
+  </body>
+</html>
