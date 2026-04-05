@@ -1,107 +1,103 @@
 <!doctype html>
 <html lang="en">
-  <head>
-      <meta charset="utf-8" />
-      <meta name="viewport" content="width=device-width, initial-scale=1" />
-      <title>Elm Capital</title>
-    <meta name="description" content="Elm Capital — Alpha Fund and Liquid Venture strategies in digital assets.">
-    <style>
-          :root {
-                  --bg: #170423; /* dark purple */
-                  --fg: #ECEFF4; /* primary text */
-                  --muted: #C9D1D9;/* secondary text */
-          }
-          * { box-sizing: border-box; }
-          html, body {
-                  height: 100%;
-                  margin: 0;
-                  background: var(--bg);
-                  color: var(--fg);
-                  font-family: ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-                  line-height: 1.6;
-                  -webkit-font-smoothing: antialiased;
-                  -moz-osx-font-smoothing: grayscale;
-          }
-          .page {
-                  min-height: 100dvh;
-                  display: grid;
-                  grid-template-rows: auto 1fr auto auto; /* header, content, contact, footer */
-          }
-          header {
-                  display: flex;
-                  align-items: center;
-                  gap: 16px;
-                  padding: 28px 32px;
-          }
-          .brand img { height: 72px; width: auto; display: block; }
-          .brand-name { font-weight: 650; letter-spacing: .02em; font-size: 34px; }
+    <head>
+          <meta charset="utf-8" />
+          <meta name="viewport" content="width=device-width, initial-scale=1" />
+          <title>Elm Capital</title>
+        <meta name="description" content="Elm Capital — Alpha Fund and Liquid Venture strategies in digital assets.">
+        <style>
+                :root {
+                          --bg: #170423; /* dark purple */
+                          --fg: #ECEFF4; /* primary text */
+                          --muted: #C9D1D9;/* secondary text */
+                }
+                * { box-sizing: border-box; }
+                html, body {
+                          height: 100%;
+                          margin: 0;
+                          background: var(--bg);
+                          color: var(--fg);
+                          font-family: ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+                          line-height: 1.6;
+                          -webkit-font-smoothing: antialiased;
+                          -moz-osx-font-smoothing: grayscale;
+                }
+                .page {
+                          min-height: 100dvh;
+                          display: grid;
+                          grid-template-rows: auto 1fr auto auto; /* header, content, contact, footer */
+                }
+                header {
+                          display: flex;
+                          align-items: center;
+                          gap: 16px;
+                          padding: 28px 32px;
+                }
+                .brand img { height: 72px; width: auto; display: block; }
+                .brand-name { font-weight: 650; letter-spacing: .02em; font-size: 34px; }
 
-          .content {
-                  padding: 24px 32px 32px;
-                  display: grid;
-                  place-items: center;
-                  text-align: left;
-          }
-          .content-inner { width: 100%; max-width: 1100px; }
-          .content p {
-                  font-size: clamp(16px, 1.7vw, 20px);
-                  color: var(--muted);
-                  margin: 14px 0 0;
-          }
-          .content h2 {
-                  margin: 28px 0 8px;
-                  font-weight: 600;
-                  font-size: clamp(20px, 2.2vw, 26px);
-                  letter-spacing: .2px;
-                  color: var(--fg);
-          }
+                .content {
+                          padding: 24px 32px 32px;
+                          display: grid;
+                          place-items: center;
+                          text-align: left;
+                }
+                .content-inner { width: 100%; max-width: 1100px; }
+                .content p {
+                          font-size: clamp(16px, 1.7vw, 20px);
+                          color: var(--muted);
+                          margin: 14px 0 0;
+                }
+                .content h2 {
+                          margin: 28px 0 8px;
+                          font-weight: 600;
+                          font-size: clamp(20px, 2.2vw, 26px);
+                          letter-spacing: .2px;
+                          color: var(--fg);
+                }
 
-          .contact {
-                  padding: 18px 32px 8px;
-                  text-align: left;
-          }
-          .contact a {
-                  color: var(--fg);
-                  text-decoration: none;
-                  border-bottom: 1px solid rgba(255,255,255,0.25);
-          }
-          .contact a:hover { border-color: var(--fg); }
+                .contact {
+                          padding: 18px 32px 8px;
+                          text-align: left;
+                }
+                .contact a {
+                          color: var(--fg);
+                          text-decoration: none;
+                          border-bottom: 1px solid rgba(255,255,255,0.25);
+                }
+                .contact a:hover { border-color: var(--fg); }
 
-          footer {
-                  padding: 16px 32px 28px;
-                  font-size: 14px;
-                  color: var(--muted);
-                  border-top: 1px solid rgba(255,255,255,0.08);
-          }
-          @media (min-width: 900px) {
-                  header { padding: 32px 48px; }
-                  .content { padding-left: 48px; padding-right: 48px; }
-                  .contact, footer { padding-left: 48px; padding-right: 48px; }
-          }
-        </style>
-  </head>
-  <body>
-      <div class="page">
-            <header>
-                    <div class="brand">
-                              <img src="assets/logo.png" alt="Elm Capital logo" />
-                    </div>div>
-                    <div class="brand-name"></div>div>
-            </header>
+                footer {
+                          padding: 16px 32px 28px;
+                          font-size: 14px;
+                          color: var(--muted);
+                          border-top: 1px solid rgba(255,255,255,0.08);
+                }
+                @media (min-width: 900px) {
+                          header { padding: 32px 48px; }
+                          .content { padding-left: 48px; padding-right: 48px; }
+                          .contact, footer { padding-left: 48px; padding-right: 48px; }
+                }
+              </style>
+    </head>
+    <body>
+          <div class="page">
+                  <header>
+                            <div class="brand">
+                                        <img src="assets/logo.png" alt="Elm Capital logo" />
+                            </div>
+                            <div class="brand-name"></div>
+                  </header>
 
-            <section class="content">
-                    <div class="content-inner"></div>div>
-            </section>section>
+                  <section class="content">
+                            <div class="content-inner"></div>
+                  </section>
 
-            <div class="contact"></div>div>
-            <footer></footer>
-      </div>div>
-  
-    <!-- All text content lives in content.js — edit that file to change any wording -->
-    <script src="content.js"></script>
-  </body>
-</html>html></footer>
-            </header>
-  </body>
-    </style></title>
-  </head>
+                  <div class="contact"></div>
+                  <footer></footer>
+          </div>
+    
+        <!-- All text content lives in content.js — edit that file to change any wording -->
+        <script src="content.js"></script>
+    </body>
+</html>
