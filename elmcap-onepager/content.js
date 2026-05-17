@@ -14,7 +14,7 @@ const SITE_CONTENT = {
 
         // --- Delta-Neutral Quant Fund section ---
         alphaTitle: "Delta-Neutral Quant Fund",
-        alphaBody: "Designed to deliver consistent, high-Sharpe returns with minimal correlation to broader market movements. Through advanced statistical models, proprietary execution algorithms, and deep understanding of market microstructure, we capture inefficiencies across multiple asset classes and venues while maintaining tight risk controls.",
+        alphaBody: "Designed to deliver consistent, high-Sharpe returns with minimal correlation to broader market movements. Through high-frequency trading, market making, advanced statistical models, and proprietary execution algorithms grounded in a deep understanding of market microstructure, we provide liquidity and capture inefficiencies across multiple asset classes and venues while maintaining tight risk controls.",
 
         // --- Thematic Investing section ---
         liquidTitle: "Thematic Investing",
